@@ -1,0 +1,145 @@
+
+\documentclass[12pt, oneside]{article}%Tipo de documento y tamaño de letra%
+\usepackage[spanish]{layout}
+%\usepackage{hyperref}
+\usepackage{color,graphicx}%Para poder incertar graficas%
+\usepackage{graphics}
+\usepackage{amsmath,amssymb}%Insertar unos simbolos matematicos especiales%
+\usepackage{setspace}
+%\usepackage{empheq}
+%\usepackage{multicol}
+\onehalfspacing
+%\usepackage[mathscr]{euscript}%Tipo especial de letra%
+\usepackage[utf8]{inputenc}%Para las tildes
+\usepackage[spanish,activeacute]{babel} %Todo en Español
+%\usepackage{multicol}
+\pagestyle{empty}
+%\usepackage{spalign}  %SISTEMAS DE ECUACIONES%
+%\usepackage{array}
+\usepackage{layout}
+\usepackage{manfnt}
+\usepackage{float}
+\usepackage{mmacells}
+\usepackage{mma} 
+
+
+\def\Car{{\textsf{Car}}}
+\def\Ring{{\mathcal R}}
+\def\Z{{\mathbb Z}}
+\def\R{{\mathbb R}}
+
+\def\F{{\mathbb F}}
+\def\Wolfram{{\emph{Mathematica}\textsuperscript{\textregistered} }}
+
+\usepackage{picinpar}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\topmargin}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\headsep}{0pt}
+\setlength{\textheight}{24cm}
+\setlength{\textwidth}{16.5cm}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\footskip}{1cm}
+
+\begin{document}
+\setlength{\parindent}{0cm}%EL ANCHO DE LA SANGRIA DE AQUÍ EN ADELANTE%
+\hoffset-0.46cm
+\voffset-1.46cm
+
+\begin{window}[0,l,{\includegraphics[scale=0.3]{logo.eps}},]
+\Large  \hspace{0.5cm}\textsf{Universidad Nacional de Colombia} \\
+\textcolor{white}{\tiny.}  \Large \hspace{0.6cm} \textsf{Departamento de Matemáticas} \\
+\textcolor{white}{\tiny.}   \large\hspace{0.5cm}\textsf{Introducción al Análisis Combinatorio}\\
+\textcolor{white}{\tiny.}   \large \hspace{6.5cm}\textsf{Taller Semana 1} \normalsize (I-2021)\\
+\end{window}
+
+\vspace{0.5cm}
+\normalfont
+\textsf{Prof. José L. Ramírez} 
+\normalsize
+\dotfill
+
+
+
+Los problemas que aparecen señalados con el símbolo \manimpossiblecube  \ deben ser resueltos en \textsf{Mathematica}. Adicional al pdf de la tarea (la tarea debería ser hecha en \LaTeX), deben adjuntar el archivo .nb con esas soluciones de \textsf{Mathematica}. No olvide justificar cada una de sus respuestas. 
+
+
+\begin{enumerate}
+
+\item (\textcolor{magenta}{Torres de Hanoi})  El problema de las Torres de Hanoi \index{Torres de Hanoi} consiste en mover una pila de $n$ discos (todos de tamaño diferente) que están en una de tres torres  a cualquiera de las otras dos. Inicialmente los discos  están organizados en orden de tamaño decreciente de la parte inferior a la parte superior. Adicionalmente, se tiene la condición  de que ningún disco puede estar encima de un disco más pequeño y se debe mover solamente un disco a la vez. Sea $H_n$ la cantidad más pequeña de movimientos que se requieren para mover una pila de $n$ discos a otra torre. Por ejemplo, en la Figura \ref{Hanoi2} mostramos los 7 movimientos que se requieren para mover una pila de 3 discos de la Torre 1 a la Torre 2. Es decir que $H_3=7$. Observe que este número es independiente si se mueve a la Torre 3. Además, es claro que $H_0=0$.
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{Hanoid.eps}
+  \caption{Movimientos Torres de Hanoi, $n=3$.}\label{Hanoi2}
+  \end{figure}
+  
+\begin{enumerate}
+\item Encuentre una relación de recurrencia para la sucesión $H_n$ y a partir de ella encuentre una fórmula cerrada para  $H_n$.
+\item Encuentre la función generatriz de la sucesión $H_n$.
+
+\item Una posible variación del problema de las Torres de Hanoi consiste de las mismas tres torres y $2n$ discos de $n$ tamaños diferentes, tal que hay exactamente  dos del mismo tamaño. Sea $T_n$ la cantidad más pequeña de movimientos que se requieren para mover una pila de $2n$ discos a otra torre, en este caso se permite mover un disco sobre otro que tenga el mismo tamaño. Encuentre una relación de recurrencia para la sucesión $T_n$ y resuélvala. 
+\end{enumerate}
+	\item(\textcolor{red}{Números de Pell}). Considere la sucesión $\{P_n\}_{n\geq 0}$ definida por $P_n=2P_{n-1}+P_{n-2}$ para $n\geq 2$, con los valores iniciales $P_0=0$ y 		$P_1=1$. Esta sucesión se conoce como los números de Pell.
+	\begin{enumerate}
+		\item Encuentre la función generatriz de $\{P_n\}_{n\geq 0}$.
+		\item Encuentre una fórmula explícita y una fórmula asintótica para $P_n$.
+		\item Sea $Q_n$ el número de formas de teselar una cinta de tamaño $2\times n$  ($n\geq 1$) con las siguientes tres baldosas:
+
+    \begin{figure}[H]
+    \centering
+\includegraphics[scale=1.2]{fig.eps}
+    \end{figure}
+     Demuestre que $Q_n=P_{n+1}$ para todo $n\geq 1$.
+
+	\end{enumerate}
+
+
+
+	
+	\item Suponga que una sucesión $\{ a_n\}_{n\geq 0}$ tiene como función generatriz
+$$\sum_{n\geq 0} a_n x^n = \frac{x^2}{1-x-2x^2+x^3}.$$
+   	\begin{enumerate}
+\item A partir de la función generatriz encuentre una relación de recurrencia para la sucesión $a_n$. Usando la recurrencia encuentre los primeros  8 valores de $a_n$.
+\item(\manimpossiblecube)  Con ayuda de  \Wolfram expanda la función generatriz como una serie formal y verifique que los primeros valores coinciden con los obtenidos por medio de la recurrencia. 
+\end{enumerate}
+
+
+
+
+
+\item\label{rec2} (\textcolor{magenta}{Función generatriz Quicksort}). Sea $B(x)$ la función generatriz de la sucesión $b_n$ que cuenta el promedio de las comparaciones para el algoritmo Quicksort, es decir que $B(x)=\sum_{n\geq 0} b_nx^n$.
+\begin{enumerate}
+
+\item A partir de la igualdad
+$(n+1)b_{n+1}-(n+2)b_n=2n$ demuestre que 
+$$B(x)'=\frac{2x}{(1-x)^3}+\frac{2}{1-x}B(x),$$
+donde $B(x)'$ denota la derivada de $B(x)$.
+\item(\manimpossiblecube) Con ayuda de  \Wolfram solucione la anterior ecuación diferencial, tenga en cuenta el valor inicial.
+\item Utilice la expresión obtenida en el punto anterior y deduzca que $$b_n=2(n+1)H_n-4n, \quad n\geq 1,$$
+donde $H_n$ es el $n$-ésimo número armónico.
+
+En este ejercicio puede utilizar el hecho de que la función generatriz de los números armónicos es
+$$\sum_{n\geq 0}H_n x^n =\frac{1}{1-x} \ln \frac{1}{1-x}.$$
+Observe que esto se puede verificar con ayuda de \Wolfram 
+\begin{mmaCell}[morefunctionlocal={n}]{Input}
+  \mmaUnderOver{\(\pmb{\sum}\)}{n=0}{\mmaDef{\(\pmb{\infty}\)}}\
+HarmonicNumber[n] \mmaSup{x}{n}
+\end{mmaCell}
+\begin{mmaCell}{Output}
+  \mmaFrac{Log[1-x]}{-1+x}
+\end{mmaCell}
+
+
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+
+\end{document}
+
